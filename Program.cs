@@ -4,33 +4,26 @@
     {
         static void Main(string[] args)
         {
-            Console.Write("Digite o número de linhas para a árvore: ");
+            Console.Write("Digite o número de linhas para a metade da árvore: ");
+
+            // Obter o número de linhas a partir da entrada do usuário
             int numeroDeLinhas = Convert.ToInt32(Console.ReadLine());
 
-            // Loop para percorrer cada linha da árvore
-            for (int linha = 1; linha <= numeroDeLinhas; linha++)
+            // Loop para desenhar a metade da árvore
+            for (int i = 1; i <= numeroDeLinhas; i++)
             {
-                // Calcular a quantidade de espaços em branco antes dos números ímpares
-                int espacosEmBranco = numeroDeLinhas - linha;
-
-                // Imprimir espaços em branco
-                for (int i = 0; i < espacosEmBranco; i++)
+                // Números de '*' por linha
+                for (int j = 0; j < i; j++)
                 {
-                    Console.Write(" ");
+                    Console.Write("*");
                 }
 
-                // Calcular e imprimir os números ímpares com o caractere '*'
-                for (int numeroImpar = 1; numeroImpar <= (2 * linha - 1); numeroImpar += 2)
-                {
-                    Console.Write(numeroImpar);
-                }
-
-                // Ir para a próxima linha após imprimir a linha atual
+                // Mover para a próxima linha após desenhar uma linha completa
                 Console.WriteLine();
             }
 
-            // Aguardar a entrada do usuário antes de fechar o console
-            Console.ReadLine();
+            Console.ReadLine(); // Manter o console aberto após a execução
         }
     }
+   
 }
